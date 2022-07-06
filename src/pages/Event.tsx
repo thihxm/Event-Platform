@@ -32,12 +32,12 @@ export function Event() {
   }, [isMobile])
   
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && isMobile) {
       document.body.style.setProperty("overflow", "hidden");
     } else {
       document.body.style.removeProperty("overflow");
     }
-  }, [isOpen])
+  }, [isOpen, isMobile])
 
   const handleMobileNavClick = (newValue: boolean) => {
     setIsOpen(newValue)
